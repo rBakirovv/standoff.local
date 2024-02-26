@@ -1,0 +1,732 @@
+/* imports */
+
+@import url(./fonts.css);
+@import url(./normalize.css);
+
+body {
+  --container-width: 1120px;
+  --colors-white: #fff;
+  --colors-black: #222;
+  --colors-purple: #333a91;
+  --colors-red: #df5642;
+  --colors-red-active: #9a1d1e;
+  --colors-line: #e8e8e8;
+  --background-fa: #fafafa;
+}
+
+/* UI */
+
+.logo {
+  font-family: "Days One", sans-serif;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 114%;
+  text-transform: uppercase;
+  color: var(--colors-white);
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  z-index: 10;
+  left: 0%;
+  top: 0%;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
+}
+
+.overlay_private {
+  left: -50%;
+  top: -50%;
+  width: 10000%;
+  height: 10000%;
+}
+
+.overlay_active {
+  display: block;
+}
+
+.title-container {
+  margin-bottom: 48px;
+}
+
+.title-container h2 {
+  font-family: "Days One", sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 175%;
+  color: var(--colors-black);
+  color: #000;
+  margin: 0;
+}
+
+.title-container_white h2 {
+  color: #FFF;
+}
+
+@media screen and (max-width: 1024px) {
+  .overlay_private {
+    pointer-events: all;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .title-container {
+    margin-bottom: 32px;
+  }
+
+  .title-container h2 {
+    font-size: 28px;
+    line-height: 143%;
+  }
+}
+
+.red-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Days One", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--colors-white);
+  box-shadow: 0 5px 12px 0 rgba(28, 41, 61, 0.06), 0 1px 32px 0 rgba(28, 41, 61, 0.05);
+  background: var(--colors-red);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  padding: 24px 48px;
+}
+
+@media (hover: hover) {
+  .red-button:hover {
+    background: var(--colors-purple);
+  }
+
+  .red-button:active {
+    background: var(--colors-red-active);
+  }
+}
+
+@media (hover: none) {
+  .red-button:active {
+    background: var(--colors-red-active);
+  }
+}
+
+/* header & menu */
+
+.header {
+  position: absolute;
+  z-index: 3;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: var(--container-width);
+  width: 100%;
+}
+
+.menu__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.menu__row:not(:first-of-type) {
+  margin-top: 24px;
+}
+
+.menu__links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.menu__link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: "Days One", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: var(--colors-white);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.menu__link-image {
+  max-width: 24px;
+}
+
+@media (hover: hover) {
+  .menu__link:hover {
+    color: var(--colors-red);
+  }
+
+  .menu__link:active {
+    color: var(--colors-red-active);
+  }
+}
+
+@media (hover: none) {
+  .menu__link:active {
+    color: var(--colors-red-active);
+  }
+}
+
+.menu__links-privates {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.menu__link-private {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Days One", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--colors-white);
+  border: 2px solid var(--colors-red);
+  border-radius: 8px;
+  padding: 12px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  .menu__link-private:hover {
+    background: var(--colors-red);
+  }
+
+  .menu__link-private:active {
+    background: var(--colors-red-active);
+    border-color: var(--colors-red-active);
+  }
+}
+
+@media (hover: none) {
+  .menu__link-private:active {
+    background: var(--colors-red-active);
+    border-color: var(--colors-red-active);
+  }
+}
+
+.menu__dropdown-private-button {
+  padding-right: 44px;
+}
+
+.menu__dropdown-private-button.active {
+  background: var(--colors-red);
+}
+
+.menu__dropdown-private-button::after {
+  content: '';
+  position: absolute;
+  right: 18px;
+  bottom: 50%;
+  width: 14px;
+  height: 8px;
+  background-image: url(../img/arrow-menu.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: translateY(50%);
+  transition: all 0.2s ease-in-out;
+}
+
+.menu__dropdown-private-button.active::after {
+  transform: translateY(50%) rotate(180deg);
+}
+
+.menu__dropdown-private {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 5px 12px 0 rgba(28, 41, 61, 0.06), 0 1px 32px 0 rgba(28, 41, 61, 0.05);
+  background: var(--colors-white);
+  transition: all 0.2s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* зона клика */
+.menu__dropdown-private::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -10px;
+  width: 165px;
+  height: 10px;
+}
+
+.menu__dropdown-private-button.active .menu__dropdown-private {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: all;
+}
+
+@media (hover: hover) {
+  .menu__dropdown-private-button:hover {
+    background: var(--colors-red);
+  }
+
+  .menu__dropdown-private-button:hover::after {
+    transform: translateY(50%) rotate(180deg);
+  }
+
+  .menu__dropdown-private-button:hover .menu__dropdown-private {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+.menu__dropdown-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: calc(25% - 6px);
+  min-width: calc(25% - 6px);
+  flex-shrink: 1;
+  height: 135px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.menu__dropdown-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, #000 100%);
+}
+
+.menu__dropdown-item span {
+  display: inline-block;
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: 50%;
+  transform: translateX(-50%) translateY(50%);
+  font-family: "Days One", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 133%;
+  text-align: center;
+  color: var(--colors-white);
+  max-width: 95%;
+}
+
+.menu__dropdown-image {
+  height: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+.menu__dropdown-item:hover .menu__dropdown-image {
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 1160px) {
+  .header {
+    max-width: calc(100% - 40px);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .menu__row:nth-child(2) {
+    justify-content: center;
+  }
+
+  .menu__links {
+    display: none;
+  }
+
+  .menu__links-privates {
+    display: none;
+  }
+
+  .menu__dropdown-private-button {
+    max-width: 328px;
+    width: 100%;
+    padding-right: 12px;
+  }
+
+  .menu__dropdown-private-button::after {
+    right: 25%;
+  }
+
+  .menu__dropdown-private {
+    pointer-events: all;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .menu__dropdown-private {
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: column;
+    flex-wrap: nowrap;
+    max-height: 80vh;
+    max-width: 328px;
+    overflow: scroll;
+  }
+
+  .menu__dropdown-item {
+    flex-basis: calc(100%);
+    min-width: calc(100%);
+    min-height: 135px;
+    max-height: 135px;
+  }
+
+  .menu__dropdown-image {
+    width: 100%;
+    height: initial;
+  }
+}
+
+/* burger */
+
+.burger__icon {
+  display: none;
+}
+
+.burger {
+  position: fixed;
+  z-index: 101;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: #222;
+  transform: translateX(100%);
+  padding: 24px 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+.burger_active {
+  transform: translateX(0);
+}
+
+.burger__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.burger__close {
+  width: 14px;
+  height: 14px;
+  background-image: url(../img/close.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.burger .menu__links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 48px;
+}
+
+.burger .menu__links-privates {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 48px;
+}
+
+.burger .menu__link-private {
+  width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  .burger__icon {
+    display: block;
+    width: 18px;
+    height: 14px;
+    background-image: url(../img/burger.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+/* stb */
+
+.stb {
+  position: relative;
+  background-image: url(../img/stb.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.stb::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 14%, rgba(0, 0, 0, 0.2) 37.5%, rgba(0, 0, 0, 0.1) 49.5%, rgba(0, 0, 0, 0.2) 74.5%);
+}
+
+.stb__container {
+  position: relative;
+  z-index: 2;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 195px 0 100px;
+}
+
+.stb__game-icon {
+  max-width: 120px;
+}
+
+.stb h1 {
+  font-family: "Days One", sans-serif;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 117%;
+  color: #FFF;
+  max-width: 360px;
+  margin: 12px 0 0;
+}
+
+.stb__text {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 156%;
+  color: var(--colors-white);
+  max-width: 300px;
+  margin: 12px 0 0;
+}
+
+.stb__button {
+  gap: 8px;
+  width: max-content;
+  margin-top: 40px;
+}
+
+.stb__button-icons {
+  max-width: 80px;
+}
+
+@media screen and (max-width: 1160px) {
+  .stb__container {
+    max-width: calc(100% - 40px);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .stb {
+    background-position: right center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .stb {
+    background-position: right -150px center;
+  }
+
+  .stb__button {
+    position: relative;
+    max-width: 328px;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* privates-cards */
+
+.privates-cards {
+  background: var(--background-fa);
+}
+
+.privates-cards__container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 80px 0;
+}
+
+.privates-cards__content-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.private-card {
+  display: flex;
+  flex-direction: column;
+  flex-basis: calc(25% - 18px);
+  min-width: calc(25% - 18px);
+  flex-shrink: 1;
+  box-shadow: 0 4px 8px 0 rgba(28, 41, 61, 0.06), 0 0 16px 0 rgba(28, 41, 61, 0.05);
+  background: var(--colors-white);
+  border-radius: 12px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.private-card:hover {
+  transform: translateY(-10px);
+}
+
+@media (hover: hover) {
+  .private-card:hover {
+    transform: translateY(-10px);
+  }
+}
+
+@media (hover: none) {
+  .private-card:active {
+    transform: translateY(-10px);
+  }
+}
+
+.private-card__image-container {
+  height: 186px;
+}
+
+.private-card__image {
+  height: 100%;
+}
+
+.private-card__text-container {
+  background-color: #FFF;
+  padding: 16px;
+}
+
+.private-card__name {
+  font-family: "Days One", sans-serif;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: normal;
+  color: var(--colors-black);
+}
+
+.private-card__time-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.private-card__time {
+  width: 20px;
+  height: 20px;
+  background-image: url(../img/time.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.private-card__time-text {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: normal;
+  color: var(--colors-black);
+}
+
+.private-card__version-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 4px;
+  background: var(--colors-line);
+  width: max-content;
+  padding: 6px 12px;
+  margin-top: 16px;
+}
+
+.private-card__version {
+  width: 24px;
+  height: 24px;
+  background-image: url(../img/version.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.private-card__version-text {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: normal;
+  color: var(--colors-purple);
+}
+
+@media screen and (max-width: 1160px) {
+  .privates-cards__container {
+    max-width: calc(100% - 40px);
+    padding: 56px 0;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .privates-cards__container {
+    max-width: calc(100% - 40px);
+  }
+
+  .private-card {
+    flex-basis: calc(50% - 24px);
+    min-width: calc(50% - 24px);
+  }
+
+  .private-card__image {
+    width: 100%;
+    height: initial;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .private-card__image {
+    width: initial;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .private-card {
+    flex-basis: 100%;
+    min-width: 100%;
+  }
+
+  .private-card__image {
+    width: 100%;
+    height: initial;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .private-card__image {
+    width: initial;
+    height: 100%;
+  }
+}

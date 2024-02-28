@@ -3,11 +3,11 @@ window.addEventListener("DOMContentLoaded", function () {
   const burger = document.querySelector(".burger");
   const burgerClose = document.querySelector(".burger__close");
 
-  burgerIcon.addEventListener("click", () => {
+  burgerIcon && burgerIcon.addEventListener("click", () => {
     burger.classList.add("burger_active");
   })
 
-  burgerClose.addEventListener("click", () => {
+  burgerClose && burgerClose.addEventListener("click", () => {
     burger.classList.remove("burger_active");
   })
 })

@@ -220,6 +220,27 @@ body {
   transform: translateY(-50%) rotate(90deg);
 }
 
+.download-button {
+  gap: 8px;
+}
+
+.download-button-icons {
+  max-width: 80px;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  margin-top: 16px;
+}
+
+@media screen and (max-width: 600px) {
+  .buttons-container {
+    flex-direction: column;
+  }
+}
+
 .mt-none {
   margin-top: 0 !important;
 }
@@ -633,10 +654,6 @@ body {
   gap: 8px;
   width: max-content;
   margin-top: 40px;
-}
-
-.stb__button-icons {
-  max-width: 80px;
 }
 
 @media screen and (max-width: 1160px) {
@@ -1195,6 +1212,102 @@ body {
   cursor: pointer;
 }
 
+.blog .buttons-container a {
+  width: 100%;
+}
+
+.blog__list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.blog__list li {
+  position: relative;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 156%;
+  color: var(--colors-black);
+}
+
+.blog__list_purple-square li {
+  padding-left: 30px;
+}
+
+.blog__list_purple-square li::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  background: var(--colors-purple);
+}
+
+.blog__list_plus li {
+  padding-left: 40px;
+}
+
+.blog__list_plus li::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  background-image: url(../img/plus.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.blog__list_minus li {
+  padding-left: 40px;
+}
+
+.blog__list_minus li::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  background-image: url(../img/minus.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.blog__list li strong {
+  font-weight: 700;
+}
+
+.blog__list li p {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 156%;
+  color: var(--colors-black);
+  margin: 4px 0 0;
+}
+
+.blog__double-lists {
+  display: flex;
+  gap: 24px;
+}
+
+.blog__double-lists .blog__list {
+  flex-basis: calc(50% - 24px/2);
+  min-width: calc(50% - 24px/2);
+}
+
 @media (hover: hover) {
   .blog__link:hover {
     text-decoration: none;
@@ -1681,7 +1794,7 @@ body {
     padding: 40px;
     padding-left: 64px;
   }
-  
+
   .quote .blog__link {
     margin-top: 24px;
   }

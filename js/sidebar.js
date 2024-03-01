@@ -20,6 +20,14 @@ window.addEventListener("DOMContentLoaded", function () {
 
     if (window.scrollY + sidebarItemHeight > sidebarFooterPosition) {
       sidebarItems[sidebarItems.length - 1].classList.remove("fixed");
+    } else {
+      sidebarItems.forEach((item, index) => {
+        if (index !== sidebarItems.length - 1) {
+          item.style.display = "block";
+        }
+      })
+
+      sidebarInner.classList.remove("stop");
     }
   }
 
@@ -32,6 +40,22 @@ window.addEventListener("DOMContentLoaded", function () {
 
     if (window.scrollY + sidebarItemHeight > sidebarFooterPosition) {
       sidebarItems[sidebarItems.length - 1].classList.remove("fixed");
+
+      sidebarItems.forEach((item, index) => {
+        if (index !== sidebarItems.length - 1) {
+          item.style.display = "none";
+        }
+      })
+
+      sidebarInner.classList.add("stop");
+    } else {
+      sidebarItems.forEach((item, index) => {
+        if (index !== sidebarItems.length - 1) {
+          item.style.display = "block";
+        }
+      })
+
+      sidebarInner.classList.remove("stop");
     }
   })
 })

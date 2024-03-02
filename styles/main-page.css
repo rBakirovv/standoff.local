@@ -1,0 +1,610 @@
+/* stb */
+
+.stb {
+  position: relative;
+  background-image: url(../img/stb.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.stb::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 14%, rgba(0, 0, 0, 0.2) 37.5%, rgba(0, 0, 0, 0.1) 49.5%, rgba(0, 0, 0, 0.2) 74.5%);
+}
+
+.stb__container {
+  position: relative;
+  z-index: 2;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 195px 0 100px;
+}
+
+.stb__game-icon {
+  max-width: 120px;
+}
+
+.stb h1 {
+  font-family: "Days One", sans-serif;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 117%;
+  color: var(--colors-white);
+  max-width: 360px;
+  margin: 12px 0 0;
+}
+
+.stb__text {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 156%;
+  color: var(--colors-white);
+  max-width: 300px;
+  margin: 12px 0 0;
+}
+
+.stb__button {
+  gap: 8px;
+  width: max-content;
+  margin-top: 40px;
+}
+
+@media screen and (max-width: 1160px) {
+  .stb__container {
+    max-width: calc(100% - 40px);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .stb {
+    background-position: right center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .stb {
+    background-position: right -150px center;
+  }
+
+  .stb__button {
+    position: relative;
+    max-width: 328px;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* privates-cards */
+
+.privates-cards {
+  background: var(--background-fa);
+}
+
+.privates-cards__container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 80px 0;
+}
+
+.privates-cards__content-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.private-card {
+  display: flex;
+  flex-direction: column;
+  flex-basis: calc(25% - 18px);
+  min-width: calc(25% - 18px);
+  flex-shrink: 1;
+  box-shadow: 0 4px 8px 0 rgba(28, 41, 61, 0.06), 0 0 16px 0 rgba(28, 41, 61, 0.05);
+  background: var(--colors-white);
+  border-radius: 12px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+@media (hover: hover) {
+  .private-card:hover {
+    transform: translateY(-10px);
+  }
+}
+
+@media (hover: none) {
+  .private-card:active {
+    transform: translateY(-10px);
+  }
+}
+
+.private-card__image-container {
+  height: 186px;
+}
+
+.private-card__image {
+  height: 100%;
+}
+
+.private-card__text-container {
+  background: var(--colors-white);
+  padding: 16px;
+}
+
+.private-card__name {
+  font-family: "Days One", sans-serif;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: normal;
+  color: var(--colors-black);
+}
+
+.private-card__time-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.private-card__time {
+  width: 20px;
+  height: 20px;
+  background-image: url(../img/time.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.private-card__time-text {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: normal;
+  color: var(--colors-black);
+}
+
+.private-card__version-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 4px;
+  background: var(--colors-line);
+  width: max-content;
+  padding: 6px 12px;
+  margin-top: 16px;
+}
+
+.private-card__version {
+  width: 24px;
+  height: 24px;
+  background-image: url(../img/version.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.private-card__version-text {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: normal;
+  color: var(--colors-purple);
+}
+
+@media screen and (max-width: 1160px) {
+  .privates-cards__container {
+    max-width: calc(100% - 40px);
+    padding: 56px 0;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .privates-cards__container {
+    max-width: calc(100% - 40px);
+  }
+
+  .private-card {
+    flex-basis: calc(50% - 12px);
+    min-width: calc(50% - 12px);
+  }
+
+  .private-card__image {
+    width: 100%;
+    height: initial;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .private-card__image {
+    width: initial;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .private-card {
+    flex-basis: 100%;
+    min-width: 100%;
+  }
+
+  .private-card__image {
+    width: 100%;
+    height: initial;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .private-card__image {
+    width: initial;
+    height: 100%;
+  }
+}
+
+/* news-cards */
+
+.news-cards {
+  background-color: var(--colors-black);
+  background-image: url(../img/news-bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.news-cards__container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 80px 0;
+}
+
+.news-cards__content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.news-card {
+  display: flex;
+  gap: 60px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px 0 rgba(28, 41, 61, 0.06), 0 0 16px 0 rgba(28, 41, 61, 0.05);
+  background: var(--colors-white);
+  padding: 32px;
+}
+
+.news-card__image-container {
+  position: relative;
+  min-width: 400px;
+  max-width: 400px;
+  min-height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.news-card__image-container::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 50.32%, #000 100%);
+}
+
+.news-card__image {
+  height: 100%;
+}
+
+.news-card__date {
+  position: absolute;
+  z-index: 2;
+  left: 24px;
+  top: 16px;
+  font-family: "Days One", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--colors-white);
+}
+
+.news-card__name {
+  position: absolute;
+  z-index: 2;
+  left: 24px;
+  bottom: 16px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--colors-purple);
+  border-radius: 4px;
+  background: var(--colors-line);
+  padding: 9px 12px;
+}
+
+.news-card__text-container h4 {
+  font-family: "Days One", sans-serif;
+  font-weight: 400;
+  font-size: 21px;
+  color: var(--colors-black);
+  margin: 0;
+}
+
+.news-card__text-container p {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 156%;
+  color: var(--colors-black);
+  margin: 12px 0 0;
+}
+
+.news-card__list-container {
+  margin-top: 24px;
+}
+
+.news-card__list-text {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 156%;
+  color: var(--colors-black);
+}
+
+.news-card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  list-style-type: none;
+  margin: 16px 0 0;
+  padding: 0;
+}
+
+.news-card__list li {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 156%;
+  color: var(--colors-black);
+}
+
+.news-card__button {
+  max-width: 320px;
+  padding-right: 80px;
+  margin-top: 24px;
+}
+
+.news-card__button::after {
+  content: '';
+  position: absolute;
+  right: 54px;
+  bottom: 50%;
+  transform: translateY(50%);
+  width: 14px;
+  height: 8px;
+  background-image: url(../img/arrow-red.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.2s ease-in-out;
+}
+
+.news-card__button::before {
+  content: '';
+  position: absolute;
+  right: 54px;
+  bottom: 50%;
+  transform: translateY(50%);
+  width: 14px;
+  height: 8px;
+  background-image: url(../img/arrow-white.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.news-card__button:hover::after {
+  transform: translateY(50%) rotate(180deg);
+  opacity: 0;
+}
+
+.news-card__button:active::after {
+  transform: translateY(50%) rotate(180deg);
+  opacity: 0;
+}
+
+.news-card__button:hover::before {
+  transform: translateY(50%) rotate(180deg);
+  opacity: 1;
+}
+
+.news-card__button:active::before {
+  transform: translateY(50%) rotate(180deg);
+  opacity: 1;
+}
+
+.news-cards__button {
+  width: 100%;
+}
+
+@media screen and (max-width: 1160px) {
+  .news-cards__container {
+    max-width: calc(100% - 40px);
+    padding: 56px 0;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .news-card {
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .news-card__image-container {
+    min-width: 328px;
+    max-width: none;
+    min-height: 0;
+    height: 198px;
+  }
+
+  .news-card__button {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .news-card__button::after {
+    display: none;
+  }
+
+  .news-card__button::before {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .news-cards {
+    background: var(--colors-black);
+  }
+
+  .news-card {
+    flex-direction: column;
+    background: transparent;
+    gap: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .news-card__image {
+    height: initial;
+    width: 100%;
+  }
+
+  .news-card__text-container {
+    background: var(--colors-white);
+    padding: 24px;
+  }
+
+  .news-card__button {
+    margin: 24px auto 0;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .news-card__image {
+    height: 100%;
+    width: initial;
+  }
+}
+
+/* private */
+
+.private-servers {
+  width: 100%;
+}
+
+.private-servers__content-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.private-servers__card {
+  display: flex;
+  flex-direction: column;
+  flex-basis: calc(50% - 24px/2);
+  min-width: calc(50% - 24px/2);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px 0 rgba(28, 41, 61, 0.06), 0 0 16px 0 rgba(28, 41, 61, 0.05);
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  .private-servers__card:hover {
+    transform: translateY(-10px);
+  }
+}
+
+@media (hover: none) {
+  .private-servers__card:active {
+    transform: translateY(-10px);
+  }
+}
+
+.private-servers__card-image-container {
+  width: 100%;
+  height: 186px;
+  overflow: hidden;
+}
+
+.private-servers__card-image {
+  height: 100%;
+}
+
+.private-servers__card-text-container {
+  background: var(--colors-white);
+  padding: 24px;
+}
+
+.private-servers__card-name {
+  font-family: "Days One", sans-serif;
+  font-weight: 400;
+  font-size: 21px;
+  color: var(--colors-black);
+  margin: 0;
+}
+
+.private-servers__card p {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--colors-black);
+  margin: 12px 0 0;
+}
+
+.private-servers__button {
+  width: 100%;
+  margin-top: 16px;
+}
+
+@media screen and (max-width: 1024px) {
+  .private-servers__card-image {
+    height: initial;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .private-servers__card-image {
+    height: 100%;
+    width: initial;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .private-servers__card {
+    flex-basis: 100%;
+    min-width: 100%;
+  }
+
+  .private-servers__card-image {
+    height: initial;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .private-servers__card-image {
+    height: 100%;
+    width: initial;
+  }
+}

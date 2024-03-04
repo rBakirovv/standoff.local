@@ -28,6 +28,7 @@
   top: -50%;
   width: 10000%;
   height: 10000%;
+  pointer-events: all;
 }
 
 .overlay_active {
@@ -50,12 +51,6 @@
 
 .title-container_white h2 {
   color: var(--colors-white);
-}
-
-@media screen and (max-width: 1024px) {
-  .overlay_private {
-    pointer-events: all;
-  }
 }
 
 @media screen and (max-width: 600px) {
@@ -227,4 +222,21 @@
 
 .mt-none {
   margin-top: 0 !important;
+}
+
+[data-rows] {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 600px) {
+  [data-rows] {
+    -webkit-line-clamp: initial !important;
+  }
+}
+
+.more-content {
+  position: relative;
+  overflow: hidden;
 }

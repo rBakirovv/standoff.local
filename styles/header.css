@@ -145,36 +145,19 @@
   pointer-events: none;
 }
 
-/* зона клика */
-.menu__dropdown-private::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: -10px;
-  width: 165px;
-  height: 10px;
-}
-
 .menu__dropdown-private-button.active .menu__dropdown-private {
   visibility: visible;
   opacity: 1;
-  pointer-events: all;
 }
 
 @media (hover: hover) {
   .menu__dropdown-private-button:hover {
     background: var(--colors-red);
   }
+}
 
-  .menu__dropdown-private-button:hover::after {
-    transform: translateY(50%) rotate(180deg);
-  }
-
-  .menu__dropdown-private-button:hover .menu__dropdown-private {
-    visibility: visible;
-    opacity: 1;
-    pointer-events: all;
-  }
+.menu__dropdown-private-button:active {
+  background: var(--colors-red-active);
 }
 
 .menu__dropdown-item {
@@ -188,6 +171,7 @@
   height: 135px;
   border-radius: 12px;
   overflow: hidden;
+  pointer-events: all;
 }
 
 .menu__dropdown-item::after {

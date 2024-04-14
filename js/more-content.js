@@ -5,9 +5,9 @@ window.addEventListener("DOMContentLoaded", function () {
     const contentContainer = item.querySelector(".more-content");
     const moreContentButton = item.querySelector(".more-content-button");
     const moreContentCrop = item.querySelector(".more-content-crop");
-    const maxHeight = item.querySelector(".more-content-crop").offsetTop;
+    const maxHeight = moreContentCrop && moreContentCrop.offsetTop;
 
-    if (!moreContentCrop) {
+    if (!moreContentCrop && moreContentButton) {
       moreContentButton.style.display = "none";
     }
 

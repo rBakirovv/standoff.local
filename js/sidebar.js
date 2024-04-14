@@ -4,6 +4,8 @@ window.addEventListener("DOMContentLoaded", function () {
   const sidebarItems = sidebar && sidebar.querySelectorAll(".sidebar-item");
   const sidebarFooter = document.querySelector(".sidebar-footer");
   const blog = document.querySelector(".blog__content-container");
+  const blogContainer = document.querySelector(".blog__container");
+  const blogContainerPadding = parseInt(window.getComputedStyle(blogContainer).padding);
 
   const sidebarInnerHeight = sidebarInner.offsetHeight;
   const sidebarItemPosition = sidebarItems[sidebarItems.length - 1].offsetTop;
@@ -18,7 +20,7 @@ window.addEventListener("DOMContentLoaded", function () {
       sidebarItems[sidebarItems.length - 1].classList.remove("fixed");
     }
 
-    if (window.scrollY + sidebarItemHeight > sidebarFooterPosition) {
+    if (window.scrollY + sidebarItemHeight + (blogContainerPadding * 2) > sidebarFooterPosition) {
       sidebarItems[sidebarItems.length - 1].classList.remove("fixed");
     } else {
       sidebarItems.forEach((item, index) => {
@@ -38,7 +40,7 @@ window.addEventListener("DOMContentLoaded", function () {
       sidebarItems[sidebarItems.length - 1].classList.remove("fixed");
     }
 
-    if (window.scrollY + sidebarItemHeight > sidebarFooterPosition) {
+    if (window.scrollY + sidebarItemHeight + (blogContainerPadding * 2) > sidebarFooterPosition) {
       sidebarItems[sidebarItems.length - 1].classList.remove("fixed");
 
       sidebarItems.forEach((item, index) => {

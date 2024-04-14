@@ -7,7 +7,7 @@
 .blog__container {
   display: flex;
   max-width: var(--container-width);
-  margin: 0 auto;
+  margin: 80px auto;
   padding: 80px 0;
 }
 
@@ -15,26 +15,47 @@
   width: 100%;
 }
 
-.blog h4 {
+.blog h1 {
   font-family: "Days One", sans-serif;
   font-weight: 400;
   font-size: 32px;
   line-height: 175%;
   color: var(--colors-black);
-  margin: 40px 0 0;
+  margin-top: 0;
 }
 
-.blog__text {
+.blog h2 {
+  font-family: "Days One", sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 143%;
+  color: var(--colors-black);
+  /*margin: 40px 0 0;*/
+}
+
+.blog h3 {
+  font-family: "Days One", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 135%;
+  color: var(--colors-black);
+}
+
+.blog h4 {
+  font-family: "Days One", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  color: var(--colors-black);
+}
+
+.blog p {
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 156%;
   color: var(--colors-black);
-  margin: 16px 0 0;
-}
-
-.blog__text p {
-  margin-top: 0;
+  /*margin: 1em 0;*/
 }
 
 .blog__text strong {
@@ -251,6 +272,12 @@
   margin-left: 120px;
 }
 
+.sidebar__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
 .sidebar__inner.stop {
   position: sticky;
   top: 16px;
@@ -258,7 +285,6 @@
 
 .sidebar__links-list {
   max-width: 260px;
-  margin-top: 64px;
 }
 
 .sidebar__links-list:first-of-type {
@@ -482,11 +508,8 @@
 
 /* quote */
 
-.quote blockquote {
+.quote {
   position: relative;
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
   width: 100%;
   border-radius: 12px;
   box-shadow: 0 4px 8px 0 rgba(28, 41, 61, 0.06), 0 0 16px 0 rgba(28, 41, 61, 0.05);
@@ -495,27 +518,15 @@
   overflow: hidden;
 }
 
-.quote_line blockquote {
-  padding-left: 64px;
+.quote_icon {
+  padding-left: 144px;
 }
 
-.quote_gradient blockquote {
-  background: linear-gradient(90deg, #333a91 0%, #df5642 100%);
-}
-
-.quote_red blockquote {
-  background: var(--colors-red);
-}
-
-.quote_purple blockquote {
-  background: var(--colors-purple);
-}
-
-.quote_white blockquote {
-  background: var(--colors-white);
-}
-
-.quote__icon {
+.quote_icon::after {
+  content: '';
+  position: absolute;
+  left: 40px;
+  top: 40px;
   min-width: 64px;
   min-height: 64px;
   max-width: 64px;
@@ -526,7 +537,36 @@
   background-repeat: no-repeat;
 }
 
-.quote_white .quote__icon {
+.quote_line {
+  padding-left: 64px;
+}
+
+.quote_line::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 24px;
+  min-height: 100%;
+}
+
+.quote_gradient {
+  background: linear-gradient(90deg, #333a91 0%, #df5642 100%);
+}
+
+.quote_red {
+  background: var(--colors-red);
+}
+
+.quote_purple {
+  background: var(--colors-purple);
+}
+
+.quote_white {
+  background: var(--colors-white);
+}
+
+.quote_white.quote_icon::after {
   background-image: url(../img/quote-red.svg);
 }
 
@@ -538,7 +578,7 @@
   min-height: 100%;
 }
 
-.quote_line-gradient .quote__line {
+.quote_line-gradient.quote_line::after {
   background: linear-gradient(180deg, #333a91 0%, #df5642 100%);
 }
 
@@ -548,7 +588,14 @@
   font-size: 18px;
   line-height: 156%;
   color: var(--colors-white);
-  margin: 0;
+}
+
+.quote p:first-of-type {
+  margin-top: 0;
+}
+
+.quote p:last-of-type {
+  margin-bottom: 0;
 }
 
 .quote_white p {
@@ -559,32 +606,28 @@
   font-weight: 700;
 }
 
-.quote .blog__link {
-  color: var(--colors-white);
-}
-
-.quote_white .blog__link {
-  color: var(--colors-red);
-}
-
-
-.quote .blog__link:active {
-  color: var(--colors-red-active);
+.quote a {
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 600px) {
-  .quote blockquote {
+  .quote {
     flex-direction: column;
     gap: 24px;
     padding: 24px;
   }
 
-  .quote_line blockquote {
-    padding: 40px;
-    padding-left: 64px;
+  .quote_icon {
+    padding-top: 112px;
   }
 
-  .quote .blog__link {
-    margin-top: 24px;
+  .quote_icon::after {
+    left: 24px;
+    top: 24px;
+  }
+
+  .quote_line {
+    padding: 40px;
+    padding-left: 64px;
   }
 }

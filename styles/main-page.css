@@ -178,13 +178,14 @@
   border-radius: 4px;
   background: var(--colors-line);
   width: max-content;
+  max-width: 100%;
   padding: 6px 12px;
   margin-top: 16px;
 }
 
 .private-card__version {
-  width: 24px;
-  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
   background-image: url(../img/version.svg);
   background-size: contain;
   background-position: center;
@@ -192,11 +193,15 @@
 }
 
 .private-card__version-text {
+  display: inline-block;
   font-family: "Inter", sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: normal;
   color: var(--colors-purple);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 @media screen and (max-width: 1160px) {

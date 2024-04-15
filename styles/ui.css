@@ -240,3 +240,11 @@
   position: relative;
   overflow: hidden;
 }
+
+.pt-none {
+  padding-top: 0 !important;
+}
+
+.pb-none {
+  padding-bottom: 0 !important;
+}

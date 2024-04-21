@@ -3,7 +3,7 @@
   z-index: 99;
   bottom: 0;
   left: 0;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -144,6 +144,10 @@
 }
 
 @media screen and (max-width: 1024px) {
+  .mobile-menu {
+    display: flex;
+  }
+
   .swipe-menu {
     display: block;
   }

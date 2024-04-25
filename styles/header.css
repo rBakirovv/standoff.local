@@ -10,6 +10,24 @@
   width: 100%;
 }
 
+.header_light-bg {
+  position: relative;
+  top: 25px;
+  padding-bottom: 25px;
+}
+
+.header_light-bg a {
+  color: #000 !important;
+}
+
+.header_light-bg div {
+  color: #000 !important;
+}
+
+.header_light-bg .menu__dropdown-private-button::after {
+  background-image: url(../img/arrow-black.svg) !important;
+}
+
 .menu__row {
   display: flex;
   justify-content: space-between;

@@ -19,4 +19,6 @@ body {
   --colors-red-active: #9a1d1e;
   --colors-line: #e8e8e8;
   --background-fa: #fafafa;
+
+  background: var(--background-fa);
 }

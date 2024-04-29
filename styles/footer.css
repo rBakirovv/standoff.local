@@ -154,10 +154,6 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .footer {
-    padding-bottom: calc(48px + 80px);
-  }
-
   .footer__row {
     display: flex;
     flex-direction: column;

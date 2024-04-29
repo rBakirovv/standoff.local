@@ -8,7 +8,9 @@
 @import url(./main-page.css);
 @import url(./blog.css);
 @import url(./footer.css);
-@import url(./swipe-menu.css);
+
+@import url(./gallery.css);
+@import url(./icons.css);
 
 body {
   --container-width: 1120px;
@@ -19,6 +21,5 @@ body {
   --colors-red-active: #9a1d1e;
   --colors-line: #e8e8e8;
   --background-fa: #fafafa;
-
   background: var(--background-fa);
 }

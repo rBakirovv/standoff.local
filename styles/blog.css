@@ -8,11 +8,12 @@
   display: flex;
   max-width: var(--container-width);
   margin: 0 auto;
-  padding: 80px 0;
+  padding: 40px 0;
 }
 
 .blog__content-container {
-  width: 100%;
+  /*width: 100%;*/
+  max-width: 740px;
 }
 
 .blog h1 {
@@ -55,7 +56,6 @@
   font-size: 18px;
   line-height: 156%;
   color: var(--colors-black);
-  /*margin: 1em 0;*/
 }
 
 .blog p a {
@@ -92,10 +92,6 @@
 
 .blog img {
   max-width: 100%;
-  /*
-  border-radius: 12px;
-  cursor: pointer;
-  */
 }
 
 .outside .blog__image-name {
@@ -160,26 +156,108 @@
 }
 
 .blog ul li:not(:first-child) {
-  margin-top: 24px;
+  margin-top: 12px;
 }
 
 .blog ul li {
-  padding-left: 30px;
+  padding-left: 14px;
 }
 
 .blog ul li::after {
   content: '';
   position: absolute;
-  top: 8px;
+  top: 11px;
   left: 0;
-  width: 14px;
-  height: 14px;
+  width: 6px;
+  height: 6px;
   border-radius: 4px;
   background-color: var(--colors-black);
 }
 
+.square ul:not(.square) li {
+  padding-left: 14px !important;
+}
+
+.square ul:not(.square) li::after {
+  top: 11px !important;
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 4px !important;
+}
+
+.plus ul:not(.plus) li {
+  padding-left: 14px !important;
+}
+
+.plus ul:not(.plus) li::after {
+  top: 11px !important;
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 4px !important;
+  background-image: none !important;
+}
+
+.minus ul:not(.minus) li {
+  padding-left: 14px !important;
+}
+
+.minus ul:not(.minus) li::after {
+  top: 11px !important;
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 4px !important;
+  background-image: none !important;
+}
+
+ul.square li {
+  padding-left: 30px;
+}
+
+ul.square li::after {
+  top: 7px;
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+}
+
+ul.minus li {
+  padding-left: 40px;
+}
+
+ul.minus li::after {
+  top: 2px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-image: url(../img/minus.svg);
+  background-size: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+ul.plus li {
+  padding-left: 40px;
+}
+
+ul.plus li::after {
+  top: 2px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-image: url(../img/plus.svg);
+  background-size: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
 .blog ul.purple li::after {
-  background: var(--colors-purple);
+  background-color: var(--colors-purple);
+}
+
+.blog ul.red li::after {
+  background-color: var(--colors-red);
 }
 
 .blog ul li strong {
@@ -203,6 +281,7 @@
   margin: 0;
   margin-top: 40px;
   padding: 0;
+  padding-left: 12px;
 }
 
 .blog ol li {
@@ -214,23 +293,24 @@
   color: var(--colors-black);
 }
 
-.blog ol li:not(:first-child) {
-  margin-top: 24px;
+.blog ol li:not(:last-child) {
+  padding-bottom: 24px;
 }
 
 .blog ol li {
-  padding-left: 30px;
+  padding-left: calc(16px + 24px/2);
 }
 
 .blog ol li::after {
   content: '';
   position: absolute;
-  top: 5px;
-  left: 0;
-  width: 22px;
-  height: 22px;
+  top: 2px;
+  left: -13px;
+  width: 24px;
+  height: 24px;
   border-radius: 4px;
   background-color: var(--colors-black);
+  border-radius: 50%;
 }
 
 .blog ol li::before {
@@ -238,10 +318,10 @@
   content: counter(myCounter);
   position: absolute;
   z-index: 2;
-  left: 0px;
-  top: 5px;
-  width: 22px;
-  height: 22px;
+  left: -13px;
+  top: 2px;
+  width: 24px;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -257,17 +337,12 @@
   background: var(--colors-purple);
 }
 
-.blog ol li strong {
-  font-weight: 700;
+.blog ol.red li::after {
+  background: var(--colors-red);
 }
 
-.blog ol li p {
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 156%;
-  color: var(--colors-black);
-  margin: 5px 0 0;
+.blog ol li strong {
+  font-weight: 700;
 }
 
 .list-two-columns {
@@ -275,10 +350,48 @@
   width: 100%;
 }
 
+.list-three-columns {
+  column-count: 3;
+  width: 100%;
+}
+
+.list-four-columns {
+  column-count: 4;
+  width: 100%;
+}
+
 .list-two-columns li {
   -webkit-column-break-inside: avoid;
   page-break-inside: avoid;
   break-inside: avoid-column;
+}
+
+.list-line li {
+  border-left: 2px solid var(--colors-black);
+}
+
+.purple.list-line li {
+  border-left: 2px solid var(--colors-purple);
+}
+
+.red.list-line li {
+  border-left: 2px solid var(--colors-red);
+}
+
+.list-line li:last-child {
+  border: none;
+}
+
+.list-line li::after {
+  top: 0 !important;
+}
+
+.list-line li::before {
+  top: 0 !important;
+}
+
+.list-in-list ul {
+  margin-top: 5px;
 }
 
 /*

@@ -303,6 +303,32 @@ ul.plus li::after {
   color: var(--colors-black);
 }
 
+.blog ol ul {
+  margin-top: 5px;
+}
+
+.blog ol ul li {
+  padding-left: 14px;
+  padding-bottom: 0 !important;
+}
+
+.blog ol ul li:not(:first-of-type) {
+  margin-top: 12px;
+}
+
+.blog ol ul li::after {
+  content: '' !important;
+  top: 11px !important;
+  left: 0 !important;
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 4px !important;
+}
+
+.blog ol ul li::before {
+  display: none;
+}
+
 .blog ol li:not(:last-child) {
   padding-bottom: 24px;
 }

@@ -307,6 +307,10 @@ ul.plus li::after {
   margin-top: 5px;
 }
 
+.blog ol ol {
+  margin-top: 15px;
+}
+
 .blog ol ul li {
   padding-left: 14px;
   padding-bottom: 0 !important;

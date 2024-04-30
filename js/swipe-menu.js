@@ -25,6 +25,7 @@ function closeMenu() {
 
 menuButton.addEventListener("click", () => {
   swipeMenu.style.transition = "all 0.3s ease";
+  overlaySwipeMenu.style.pointerEvents = "all";
 
   if (html.style.overflow === "hidden") {
     html.style.overflow = "visible";
@@ -55,6 +56,8 @@ if (swipeMenu) {
         top: 0
       });
 
+      overlaySwipeMenu.style.pointerEvents = "none";
+
       touchstartY = event.changedTouches[0].screenY;
     }
   }, false)
@@ -79,14 +82,15 @@ if (swipeMenu) {
       swipeMenuContainer.scrollTo({
         top: 0
       });
-      swipeMenuContainer.style.overflow = "scroll";
 
+      swipeMenuContainer.style.overflow = "scroll";
       swipeMenu.style.transition = "all 0.3s ease";
 
       if (movedY - touchstartY > 100) {
         closeMenu();
       } else {
         swipeMenu.style.transform = `translateY(0)`;
+        overlaySwipeMenu.style.pointerEvents = "all";
       }
 
       touchstartY = 0;

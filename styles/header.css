@@ -1,31 +1,26 @@
 /* header & menu */
 
 .header {
-  position: absolute;
-  z-index: 3;
-  top: 25px;
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: var(--container-width);
-  width: 100%;
-}
-
-.header_light-bg {
   position: relative;
+  z-index: 3;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  background-color: var(--colors-black);
+  padding: 25px 0;
+}
+
+.header_absolute {
+  position: absolute;
   top: 25px;
-  padding-bottom: 25px;
+  background-color: transparent;
+  padding: 0;
 }
 
-.header_light-bg a {
-  color: #000 !important;
-}
-
-.header_light-bg div {
-  color: #000 !important;
-}
-
-.header_light-bg .menu__dropdown-private-button::after {
-  background-image: url(../img/arrow-black.svg) !important;
+.header .menu__row {
+  max-width: var(--container-width);
+  margin: 0 auto;
 }
 
 .menu__row {
@@ -51,12 +46,12 @@
 .menu__link>* {
   display: flex;
   align-items: center;
-  gap: 4px;
   font-family: "Days One", sans-serif;
   font-weight: 400;
   font-size: 16px;
   text-transform: uppercase;
   color: var(--colors-white);
+  padding-right: 28px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
@@ -100,9 +95,12 @@
   color: var(--colors-white);
   border: 2px solid var(--colors-red);
   border-radius: 8px;
-  padding: 12px;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
+}
+
+.menu__link-private a {
+  padding: 12px;
 }
 
 @media (hover: hover) {
@@ -124,6 +122,7 @@
 }
 
 .menu__dropdown-private-button {
+  padding: 12px;
   padding-right: 44px;
 }
 
@@ -153,11 +152,13 @@
 .menu__dropdown-private {
   position: fixed;
   top: 100px;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   width: 100%;
+  max-width: var(--container-width);
   border-radius: 12px;
   padding: 8px;
   box-shadow: 0 5px 12px 0 rgba(28, 41, 61, 0.06), 0 1px 32px 0 rgba(28, 41, 61, 0.05);
@@ -223,8 +224,12 @@
   max-width: 95%;
 }
 
+a.menu__dropdown-item {
+  padding: 0;
+}
+
 .menu__dropdown-image {
-  height: 100%;
+  width: 100%;
   transition: all 0.2s ease-in-out;
 }
 
@@ -263,6 +268,11 @@
 
   .menu__dropdown-private {
     pointer-events: all;
+  }
+
+  .menu__dropdown-image {
+    width: initial;
+    height: 100%;
   }
 }
 

@@ -51,6 +51,7 @@
 }
 
 .stb__button {
+  position: relative;
   gap: 8px;
   width: max-content;
   margin-top: 40px;
@@ -127,11 +128,49 @@
 }
 
 .private-card__image-container {
+  position: relative;
   height: 186px;
 }
 
 .private-card__image {
   height: 100%;
+}
+
+.private-card__badge {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--colors-black);
+  background: var(--colors-line);
+  border-radius: 24px;
+  max-width: calc(100% - 16px * 2);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 6px 16px;
+}
+
+.private-card__badge.purple {
+  background-color: var(--colors-purple);
+  color: var(--colors-white);
+}
+
+.private-card__badge.red {
+  background-color: var(--colors-red);
+  color: var(--colors-white);
+}
+
+.private-card__badge.black {
+  background-color: var(--colors-black);
+  color: var(--colors-white);
+}
+
+.private-card__badge.green {
+  background: var(--colors-green);
+  color: var(--colors-white);
 }
 
 .private-card__text-container {

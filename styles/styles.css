@@ -22,5 +22,6 @@ body {
   --colors-red-active: #9a1d1e;
   --colors-line: #e8e8e8;
   --background-fa: #fafafa;
+  --colors-green: #3b9133;
   background: var(--background-fa);
 }

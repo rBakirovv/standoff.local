@@ -1,3 +1,4 @@
+/*
 .icon {
 	background-repeat: no-repeat;
 	background-position: right;
@@ -26,4 +27,58 @@
 
 .icon-help {
 	background-image: url('../img/menu/icon-help.svg');
+}
+*/
+
+.os-icons {
+	width: 80px;
+	height: 24px;
+	background-image: url(../img/os-icons.svg);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.menu-link-icon {
+	position: relative;
+	display: flex;
+	align-items: center;
+	height: 24px;
+}
+
+.menu-link-icon::after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 24px;
+	height: 24px;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.icon-games::after {
+	background-image: url(../img/games.svg);
+}
+
+.icon-blog::after {
+	background-image: url(../img/blog.svg);
+}
+
+.icon-help::after {
+	background-image: url(../img/help.svg);
+}
+
+.icon-about::after {
+	background-image: url(../img/about.svg);
+}
+
+.icon-map::after {
+	background-image: url(../img/map.svg);
+}
+
+.icon-contact::after {
+	background-image: url(../img/contact.svg);
 }

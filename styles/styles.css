@@ -14,7 +14,9 @@
 @import url(./icons.css);
 
 body {
+  background-color: var(--background-fa);
   --container-width: 1120px;
+  --blog-paddings: 40px 0;
   --colors-white: #fff;
   --colors-black: #222;
   --colors-purple: #333a91;
@@ -23,5 +25,4 @@ body {
   --colors-line: #e8e8e8;
   --background-fa: #fafafa;
   --colors-green: #3b9133;
-  background: var(--background-fa);
 }

@@ -130,6 +130,7 @@
 .private-card__image-container {
   position: relative;
   height: 186px;
+  overflow: hidden;
 }
 
 .private-card__image {
@@ -578,6 +579,11 @@
   cursor: pointer;
 }
 
+.private-servers__content-container.three-cards .private-servers__card {
+  flex-basis: calc(33.333% - 24px / 1.5);
+  min-width: calc(33.333% - 24px / 1.5);
+}
+
 @media (hover: hover) {
   .private-servers__card:hover {
     transform: translateY(-10px);
@@ -631,6 +637,13 @@
   margin-top: 16px;
 }
 
+@media screen and (max-width: 1120px) {
+  .private-servers__content-container.three-cards .private-servers__card {
+    flex-basis: calc(50% - 24px / 2);
+    min-width: calc(50% - 24px / 2);
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .private-servers__card-image {
     height: initial;
@@ -664,6 +677,11 @@
   .blog:not(:has(.sidebar)) .private-servers__card-image {
     height: initial;
     width: 100%;
+  }
+
+  .private-servers__content-container.three-cards .private-servers__card {
+    flex-basis: 100%;
+    min-width: 100%;
   }
 }
 

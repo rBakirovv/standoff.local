@@ -1006,3 +1006,110 @@ ul.plus li::after {
     flex-direction: column;
   }
 }
+
+/* privates-gallery */
+
+.privates-gallery__container {
+  display: flex;
+  gap: 24px;
+}
+
+.privates-gallery__slider-container {
+  min-width: 550px;
+  max-width: 550px;
+}
+
+.privates-gallery__review {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px 0 rgba(28, 41, 61, 0.06), 0 0 16px 0 rgba(28, 41, 61, 0.05);
+  background-color: var(--colors-white);
+  padding: 24px;
+}
+
+.privates-gallery__review-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.private-card__version-container {
+  margin-top: 0;
+}
+
+.privates-gallery__review .private-review__card-options {
+  margin-top: 32px !important;
+}
+
+.privates-gallery__review .private-review__card-rating {
+  margin-top: 32px;
+}
+
+.privates-gallery__review-social {
+  position: relative;
+  height: 24px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--colors-red);
+  padding-left: 32px;
+}
+
+.privates-gallery__review-social::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background-image: url(../img/brand-telegram.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.privates-gallery__review .red-button {
+  margin-top: 48px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.privates-gallery__review .download-button {
+  flex-direction: column;
+}
+
+.privates-gallery__review .android-icon {
+  display: inline-block;
+}
+
+@media screen and (max-width: 1120px) {
+  .privates-gallery__container {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .privates-gallery__review-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .privates-gallery__review .private-review__card-options {
+    margin-top: 24px !important;
+  }
+
+  .privates-gallery__review .private-review__card-rating {
+    margin-top: 24px;
+  }
+
+  .privates-gallery__review .red-button {
+    margin-top: 24px;
+    padding: 16px;
+  }
+
+  .privates-gallery__review .android-icon {
+    display: none;
+  }
+}

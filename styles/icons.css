@@ -7,6 +7,15 @@
 	background-repeat: no-repeat;
 }
 
+.android-icon {
+	width: 24px;
+	height: 24px;
+	background-image: url(../img/android.svg);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
 .menu-link-icon {
 	position: relative;
 	display: flex;

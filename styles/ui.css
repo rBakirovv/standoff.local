@@ -204,6 +204,12 @@
   gap: 8px;
 }
 
+.download-text-info {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  letter-spacing: initial;
+}
+
 .buttons-container {
   display: flex;
   gap: 16px;

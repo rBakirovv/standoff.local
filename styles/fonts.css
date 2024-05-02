@@ -1,5 +1,12 @@
 @font-face {
   font-family: 'Inter';
+  font-weight: 300;
+  src: url(../fonts/Inter-Light.ttf);
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
   font-weight: 400;
   src: url(../fonts/Inter-Regular.ttf);
   font-style: normal;

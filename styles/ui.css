@@ -150,7 +150,6 @@
   height: 48px;
   border-radius: 50%;
   top: 50%;
-  transform: translateY(-50%);
   border: none;
   border-radius: 100%;
   background: var(--colors-black);
@@ -191,12 +190,8 @@
   transition: all 0.2s ease-in-out;
 }
 
-.slider-btn-next {
-  transform: translateY(-50%) rotate(-90deg);
-}
-
 .slider-btn-prev {
-  transform: translateY(-50%) rotate(90deg);
+  transform: rotate(180deg);
 }
 
 .download-button {

@@ -1014,9 +1014,46 @@ ul.plus li::after {
   gap: 24px;
 }
 
-.privates-gallery__slider-container {
+.privates-gallery__sliders-container {
   min-width: 550px;
   max-width: 550px;
+  overflow: hidden;
+}
+
+.privates-gallery__slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 550px;
+  height: 317px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.privates-gallery__slide img {
+  height: 100%;
+}
+
+.privates-gallery__thumbnails-container {
+  width: 100%;
+  max-width: 550px;
+  height: 61px;
+  margin-top: 8px;
+}
+
+.privates-gallery__thumbnail {
+  position: relative;
+  border-radius: 12px;
+  border: 3px solid transparent;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.privates-gallery__thumbnail.swiper-slide-thumb-active {
+  border: 3px solid var(--colors-purple);
+}
+
+.privates-gallery__thumbnails-container img {
+  height: 100%;
 }
 
 .privates-gallery__review {
@@ -1070,7 +1107,7 @@ ul.plus li::after {
 }
 
 .privates-gallery__review .red-button {
-  margin-top: 48px;
+  margin-top: 28px;
   padding-top: 16px;
   padding-bottom: 16px;
 }
@@ -1086,10 +1123,48 @@ ul.plus li::after {
 @media screen and (max-width: 1120px) {
   .privates-gallery__container {
     flex-direction: column;
+    align-items: center;
+  }
+
+  .privates-gallery__review {
+    max-width: 550px;
   }
 }
 
 @media screen and (max-width: 600px) {
+  .privates-gallery__container {
+    gap: 16px;
+  }
+
+  .privates-gallery__sliders-container {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .privates-gallery__slider-container {
+    height: 160px;
+    max-width: 100%;
+  }
+
+  .privates-gallery__slide img {
+    height: initial;
+    width: 100%;
+  }
+
+  .privates-gallery__thumbnails-container {
+    max-width: 100%;
+    height: 51px;
+  }
+
+  .privates-gallery__thumbnail img {
+    height: initial;
+    width: 100%;
+  }
+
+  .privates-gallery__review {
+    max-width: 100%;
+  }
+
   .privates-gallery__review-info {
     flex-direction: column;
     align-items: flex-start;
@@ -1111,5 +1186,12 @@ ul.plus li::after {
 
   .privates-gallery__review .android-icon {
     display: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .privates-gallery__thumbnail img {
+    height: 100%;
+    width: initial;
   }
 }

@@ -238,7 +238,7 @@ a.menu__dropdown-item {
 }
 
 @media screen and (max-width: 1160px) {
-  .header {
+  .header .menu__row {
     max-width: calc(100% - 40px);
   }
 }

@@ -16,10 +16,9 @@
     <div class="menu__row">
       <a class="logo" href="/">ПРИВАТКИ.РУ</a>
       <ul class="menu__links">
-        <li class="menu__link"><a href="/">Игры <img class="menu__link-image" src="./img/games.svg" alt="Игры"></a></li>
-        <li class="menu__link"><a href="/">Блог <img class="menu__link-image" src="./img/blog.svg" alt="Блог"></a></li>
-        <li class="menu__link"><a href="/">Поддержка <img class="menu__link-image" src="./img/help.svg"
-              alt="Поддержка"></a></li>
+        <li class="menu__link menu-link-icon icon-games"><a href="/">Игры</a></li>
+        <li class="menu__link menu-link-icon icon-blog"><a href="/">Блог</a></li>
+        <li class="menu__link menu-link-icon icon-help"><a href="/">Поддержка</a></li>
       </ul>
       <div class="burger__icon"></div>
     </div>
@@ -191,7 +190,6 @@
             <a class="red-button private-servers__button" href="#">Показать еще</a>
           </div>
           <div class="buttons-container blog__mt-top">
-            <a class="red-button download-button" href="#">Скачать <span class="os-icons"></span></a>
             <a class="red-contour-button" href="#">Узнать больше</a>
           </div>
           <blockquote class="blog__mt-top">
@@ -469,13 +467,9 @@
       <div class="footer__row">
         <a class="logo" href="/">ПРИВАТКИ.РУ</a>
         <ul class="footer__links">
-          <li class="footer__link">
-            <a href="/">О проекте <img class="footer__link-image" src="./img/about.svg" alt="О проекте"></a>
-          </li>
-          <li class="footer__link"><a href="/">Карта сайта <img class="footer__link-image" src="./img/map.svg"
-                alt="Карта сайта"></a></li>
-          <li class="footer__link"><a href="/">Контакты <img class="footer__link-image" src="./img/contact.svg"
-                alt="Контакты"></a></li>
+          <li class="footer__link menu-link-icon icon-about"><a href="/">О проекте</a></li>
+          <li class="footer__link menu-link-icon icon-map"><a href="/">Карта сайта</a></li>
+          <li class="footer__link menu-link-icon icon-contact"><a href="/">Контакты</a></li>
         </ul>
       </div>
       <div class="footer__row footer__row_links">
@@ -532,11 +526,9 @@
       <div class="burger__close"></div>
     </div>
     <ul class="menu__links">
-      <li class="menu__link"><a href="/">Игры <img class="menu__link-image" src="./img/games.svg" alt="Игры"></a></li>
-      <li class="menu__link"><a class="menu__link" href="/">Блог <img class="menu__link-image" src="./img/blog.svg"
-            alt="Блог"></a></li>
-      <li class="menu__link"><a class="menu__link" href="/">Поддержка <img class="menu__link-image" src="./img/help.svg"
-            alt="Поддержка"></a></li>
+      <li class="menu__link menu-link-icon icon-games"><a href="/">Игры</a></li>
+      <li class="menu__link menu-link-icon icon-blog"><a href="/">Блог</a></li>
+      <li class="menu__link menu-link-icon icon-help"><a href="/">Поддержка</a></li>
     </ul>
     <ul class="menu__links-privates">
       <li class="menu__link-private"><a href="/">Приватка V2</a></li>
@@ -547,7 +539,10 @@
   </div>
 
   <div class="mobile-menu">
-    <div class="mobile-menu-button">
+    <a class="mobile-menu-button icon-download mobile-menu-item" href="/">Скачать</a>
+    <div class="mobile-menu-button icon-bonus mobile-menu-item" data-menu="#mob-menu-1">Бонусы</div>
+    <div class="mobile-menu-button icon-box mobile-menu-item" data-menu="#mob-menu-2">Скины</div>
+    <div class="mobile-menu-main-button mobile-menu-item" data-menu="#mob-menu-3">
       <div class="burger-icon">
         <span></span>
       </div>
@@ -558,21 +553,98 @@
       <div class="swipe-menu__scroll-dot"></div>
     </div>
     <div class="swipe-menu__container">
-      <ul class="menu__links">
-        <li class="menu__link"><a href="/">Игры <img class="menu__link-image" src="./img/games.svg" alt="Игры"></a></li>
-        <li class="menu__link"><a class="menu__link" href="/">Блог <img class="menu__link-image" src="./img/blog.svg"
-              alt="Блог"></a></li>
-        <li class="menu__link"><a class="menu__link" href="/">Поддержка <img class="menu__link-image"
-              src="./img/help.svg" alt="Поддержка"></a></li>
-      </ul>
-      <ul class="menu__links-privates">
-        <li class="menu__link-private"><a href="/">Приватка V2</a></li>
-        <li class="menu__link-private"><a href="/">Приватка Антона Снака</a></li>
-        <li class="menu__link-private"><a href="/">Приватка StandFlame</a></li>
-        <li class="menu__link-private"><a href="/">Приватка StandKnife</a></li>
-      </ul>
+      <div class="swipe-menu__section-container" id="mob-menu-1">
+        <span style="color: #FFF;">Бонусы</span>
+      </div>
+      <div class="swipe-menu__section-container" id="mob-menu-2">
+        <div class="menu__dropdown-private">
+          <a class="menu__dropdown-item" href="/">
+            <img class="menu__dropdown-image" src="./img/v2.png" alt="v2">
+            <span>V2</span>
+          </a>
+          <a class="menu__dropdown-item" href="/">
+            <img class="menu__dropdown-image" src="./img/Антон Снака.png" alt="Антон Снака">
+            <span>Антон Снака</span>
+          </a>
+          <a class="menu__dropdown-item" href="/">
+            <img class="menu__dropdown-image" src="./img/StandFlame.png" alt="StandFlame">
+            <span>StandFlame</span>
+          </a>
+          <a class="menu__dropdown-item" href="/">
+            <img class="menu__dropdown-image" src="./img/StandLeo.png" alt="StandLeo">
+            <span>StandLeo</span>
+          </a>
+          <a class="menu__dropdown-item" href="/">
+            <img class="menu__dropdown-image" src="./img/StandFlame-2.png" alt="StandFlame">
+            <span>StandFlame</span>
+          </a>
+          <a class="menu__dropdown-item" href="/">
+            <img class="menu__dropdown-image" src="./img/RivivalRise.png" alt="RivivalRise">
+            <span>RivivalRise</span>
+          </a>
+          <a class="menu__dropdown-item" href="/">
+            <img class="menu__dropdown-image" src="./img/CrossOff.png" alt="CrossOff">
+            <span>CrossOff</span>
+          </a>
+          <a class="menu__dropdown-item" href="/">
+            <img class="menu__dropdown-image" src="./img/Yonomiru.png" alt="Yonomiru">
+            <span>Yonomiru</span>
+          </a>
+        </div>
+      </div>
+      <div class="swipe-menu__section-container active" id="mob-menu-3">
+        <div class="accordion-item">
+          <div class="accordion-head">
+            <div class="accordion-head-text">
+              <span>Приватки с ножом</span>
+            </div>
+          </div>
+          <div class="accordion-body">
+            <div class="accordion-body-container">
+              <ul class="swipe-menu__links">
+                <li class="swipe-menu__link"><a href="/">Приватки с ножом танго</a></li>
+                <li class="swipe-menu__link"> <a href="/">Приватки с фенгом</a></li>
+                <li class="swipe-menu__link"><a href="/">Приватки со всеми ножами</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-head">
+            <div class="accordion-head-text">
+              <span>Приватки с ножом</span>
+            </div>
+          </div>
+          <div class="accordion-body">
+            <div class="accordion-body-container">
+              <ul class="swipe-menu__links">
+                <li class="swipe-menu__link"><a href="/">Приватки с ножом танго</a></li>
+                <li class="swipe-menu__link"> <a href="/">Приватки с фенгом</a></li>
+                <li class="swipe-menu__link"><a href="/">Приватки со всеми ножами</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-head">
+            <div class="accordion-head-text">
+              <span>Приватки с ножом</span>
+            </div>
+          </div>
+          <div class="accordion-body">
+            <div class="accordion-body-container">
+              <ul class="swipe-menu__links">
+                <li class="swipe-menu__link"><a href="/">Приватки с ножом танго</a></li>
+                <li class="swipe-menu__link"> <a href="/">Приватки с фенгом</a></li>
+                <li class="swipe-menu__link"><a href="/">Приватки со всеми ножами</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
 
   <div class="overlay overlay_swipe-menu"></div>
 

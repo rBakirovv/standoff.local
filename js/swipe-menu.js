@@ -1,7 +1,9 @@
 const html = document.querySelector("html");
-const menuButton = document.querySelector(".mobile-menu-button");
-const menuButtonSpan = menuButton.querySelector('.burger-icon span')
+const menuButton = document.querySelector(".mobile-menu-main-button");
+const menuButtonSpan = menuButton.querySelector('.burger-icon span');
+const mobileMenuButtons = document.querySelectorAll(".mobile-menu-item");
 const swipeMenu = document.querySelector(".swipe-menu");
+const swipeMenuSections = document.querySelectorAll(".swipe-menu__section-container");
 const swipeMenuContainer = document.querySelector(".swipe-menu__container");
 const swipeMenuScrollItem = swipeMenu && swipeMenu.querySelector(".swipe-menu__scroll-item");
 
@@ -11,6 +13,7 @@ function closeMenu() {
   swipeMenu.style.transition = "all 0.3s ease";
 
   html.style.overflow = "visible";
+
   menuButtonSpan.classList.remove('active');
   swipeMenu.classList.remove("--active");
 
@@ -23,26 +26,55 @@ function closeMenu() {
   }, 200)
 }
 
-menuButton.addEventListener("click", () => {
+function openMenu() {
   swipeMenu.style.transition = "all 0.3s ease";
+
+  html.style.overflow = "hidden";
+
   overlaySwipeMenu.style.pointerEvents = "all";
 
-  if (html.style.overflow === "hidden") {
-    html.style.overflow = "visible";
-    swipeMenu.style.transform = 'translateY(150%)';
-  } else {
-    html.style.overflow = "hidden";
-    swipeMenu.style.transform = 'translateY(0%)';
-  }
+  swipeMenu.style.transform = 'translateY(0%)';
 
-  menuButtonSpan.classList.toggle('active');
-  swipeMenu.classList.toggle("--active");
+  menuButtonSpan.classList.add('active');
+  swipeMenu.classList.add("--active");
 
-  overlaySwipeMenu.classList.toggle("overlay_active");
+  overlaySwipeMenu.classList.add("overlay_active");
 
   setTimeout(() => {
     swipeMenu.style.transition = "none";
   }, 200)
+}
+
+mobileMenuButtons.forEach((item) => {
+  item.addEventListener("click", () => {
+    if (!item.href) {
+      let currentBtn = item;
+      let menuContainerId = item.getAttribute("data-menu");
+      let currentMenuContainer = document.querySelector(menuContainerId);
+
+      if (!currentBtn.classList.contains('active')) {
+        swipeMenuSections.forEach(function (item) {
+          item.classList.remove('active');
+        });
+
+        currentMenuContainer.classList.add('active');
+      }
+
+      openMenu();
+
+      if (item.classList.contains("active")) {
+        closeMenu();
+      }
+
+      item.classList.toggle("active");
+
+      mobileMenuButtons.forEach((mobileMenuItem) => {
+        if (mobileMenuItem !== item) {
+          mobileMenuItem.classList.remove("active");
+        }
+      })
+    }
+  })
 })
 
 let touchstartY = 0;
@@ -86,8 +118,12 @@ if (swipeMenu) {
       swipeMenuContainer.style.overflow = "scroll";
       swipeMenu.style.transition = "all 0.3s ease";
 
-      if (movedY - touchstartY > 100) {
+      if (movedY - touchstartY > 100 && movedY !== 0) {
         closeMenu();
+
+        mobileMenuButtons.forEach((item) => {
+          item.classList.remove("active");
+        })
       } else {
         swipeMenu.style.transform = `translateY(0)`;
         overlaySwipeMenu.style.pointerEvents = "all";
@@ -102,5 +138,11 @@ if (swipeMenu) {
     }
   }, false)
 
-  overlaySwipeMenu.addEventListener("click", closeMenu);
+  overlaySwipeMenu.addEventListener("click", () => {
+    closeMenu();
+
+    mobileMenuButtons.forEach((item) => {
+      item.classList.remove("active");
+    })
+  });
 }

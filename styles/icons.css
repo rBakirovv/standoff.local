@@ -21,6 +21,7 @@
 	display: flex;
 	align-items: center;
 	height: 24px;
+	width: max-content;
 }
 
 .menu-link-icon::after {
@@ -58,4 +59,28 @@
 
 .icon-contact::after {
 	background-image: url(../img/contact.svg);
+}
+
+.icon-download::after {
+	background-image: url(../img/download.svg);
+}
+
+.active.icon-download::after {
+	background-image: url(../img/download-active.svg);
+}
+
+.icon-bonus::after {
+	background-image: url(../img/bonus.svg);
+}
+
+.active.icon-bonus::after {
+	background-image: url(../img/bonus-active.svg);
+}
+
+.icon-box::after {
+	background-image: url(../img/box.svg);
+}
+
+.active.icon-box::after {
+	background-image: url(../img/box-active.svg);
 }

@@ -623,7 +623,7 @@ ul.plus li::after {
 
 @media screen and (max-width: 600px) {
   .card {
-    padding: 40px 16px;
+    padding: 24px 16px;
   }
 }
 
@@ -1070,7 +1070,7 @@ ul.plus li::after {
   align-items: center;
 }
 
-.private-card__version-container {
+.privates-gallery__review .private-card__version-container {
   margin-top: 0;
 }
 

@@ -151,7 +151,7 @@
 
 .menu__dropdown-private {
   position: fixed;
-  top: 100px;
+  top: 125px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -167,6 +167,20 @@
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
+}
+
+.header_absolute .menu__dropdown-private {
+  top: 100px;
+}
+
+.swipe-menu__container .menu__dropdown-private {
+  position: relative;
+  top: 0;
+  max-height: none;
+  background-color: transparent;
+  visibility: visible;
+  opacity: 1;
+  padding: 0;
 }
 
 .menu__dropdown-private-button.active .menu__dropdown-private {

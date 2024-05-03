@@ -996,14 +996,61 @@ ul.plus li::after {
 }
 
 @media screen and (max-width: 600px) {
+  .private-review__card {
+    flex-direction: column;
+    padding: 0;
+  }
+
   .private-review__card-image-container {
     width: 100%;
     min-width: 0;
     max-width: none;
+    height: 180px;
+    border-radius: 12px 12px 0 0;
   }
 
-  .private-review__card {
-    flex-direction: column;
+  .private-review__card-image {
+    height: initial;
+    width: 100%;
+  }
+
+  .private-review__card-text-container {
+    padding: 0 16px 16px;
+  }
+
+  .private-review__card-options.list-two-columns {
+    column-count: 2;
+  }
+
+  .private-review__card-options.list-three-columns {
+    column-count: 2;
+  }
+
+  .private-review__card-options.list-four-columns {
+    column-count: 2;
+  }
+
+  .private-review__card-rating {
+    margin-top: 16px;
+  }
+
+  .private-review__card-rating.list-two-columns {
+    column-count: 2;
+  }
+
+  .private-review__card-rating.list-three-columns {
+    column-count: 2;
+  }
+
+  .private-review__card-rating.list-four-columns {
+    column-count: 2;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .private-review__card-image {
+    height: 100%;
+    width: initial;
   }
 }
 
@@ -1163,6 +1210,7 @@ ul.plus li::after {
 
   .privates-gallery__review {
     max-width: 100%;
+    padding: 16px;
   }
 
   .privates-gallery__review-info {
@@ -1172,11 +1220,11 @@ ul.plus li::after {
   }
 
   .privates-gallery__review .private-review__card-options {
-    margin-top: 24px !important;
+    margin-top: 16px !important;
   }
 
   .privates-gallery__review .private-review__card-rating {
-    margin-top: 24px;
+    margin-top: 16px;
   }
 
   .privates-gallery__review .red-button {

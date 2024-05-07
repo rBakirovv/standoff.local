@@ -131,8 +131,6 @@
 
 .blog ul {
   list-style-type: none;
-  margin: 0;
-  margin-top: 40px;
   padding: 0;
 }
 
@@ -282,8 +280,6 @@ ul.plus li::after {
 .blog ol {
   counter-reset: myCounter;
   list-style-type: none;
-  margin: 0;
-  margin-top: 40px;
   padding: 0;
   padding-left: 12px;
 }

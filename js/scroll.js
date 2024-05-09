@@ -13,7 +13,7 @@ window.addEventListener("DOMContentLoaded", function () {
       const elementPosition = scrollTarget && scrollTarget.getBoundingClientRect().top;
       const offsetPosition = elementPosition - topOffset;
 
-      if (scrollTarget) {
+      if (scrollTarget && !element.classList.contains("modal-glightbox")) {
         window.scrollBy({
           top: offsetPosition,
           behavior: 'smooth'

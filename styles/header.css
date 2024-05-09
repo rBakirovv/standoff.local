@@ -51,6 +51,7 @@
   font-size: 16px;
   text-transform: uppercase;
   color: var(--colors-white);
+  text-decoration: none;
   padding-right: 28px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
@@ -99,7 +100,22 @@
   cursor: pointer;
 }
 
+.menu__link-private {
+  margin-top: 0 !important;
+  padding-left: 12px !important;
+}
+
+.menu__links-privates .menu__link-private {
+  padding-left: 0 !important;
+}
+
+.menu__link-private::after {
+  background-color: transparent;
+}
+
 .menu__link-private a {
+  color: var(--colors-white);
+  text-decoration: none;
   padding: 12px;
 }
 

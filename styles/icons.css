@@ -24,6 +24,11 @@
 	width: max-content;
 }
 
+.menu-link-icon {
+	margin-top: 0 !important;
+	padding-left: 0 !important;
+}
+
 .menu-link-icon::after {
 	content: '';
 	position: absolute;
@@ -35,6 +40,12 @@
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
+}
+
+.menu-link-icon::after {
+	left: initial;
+	right: 0;
+	background-color: transparent;
 }
 
 .icon-games::after {

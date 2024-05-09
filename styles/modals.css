@@ -1,0 +1,45 @@
+.gslide-inline {
+  height: min-content !important;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.gslide-inline .ginlined-content {
+  height: min-content !important;
+}
+
+.glightbox-clean .gnext {
+  display: none;
+}
+
+.glightbox-clean .gprev {
+  display: none;
+}
+
+.modal__container {
+  padding: 40px;
+}
+
+.modal__container>*:first-child {
+  margin-top: 0;
+}
+
+.modal__container>*:last-child {
+  margin-bottom: 0;
+}
+
+.modal__container .download-button {
+  width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  .modal__container {
+    padding: 0;
+  }
+}
+
+/* .news-card__button */
+
+#news-modal .news-card__button {
+  display: none;
+}

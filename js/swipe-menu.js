@@ -1,6 +1,6 @@
 const html = document.querySelector("html");
 const menuButton = document.querySelector(".mobile-menu-main-button");
-const menuButtonSpan = menuButton.querySelector('.burger-icon span');
+const menuButtonSpan = menuButton && menuButton.querySelector('.burger-icon span');
 const mobileMenuButtons = document.querySelectorAll(".mobile-menu-item");
 const swipeMenu = document.querySelector(".swipe-menu");
 const swipeMenuSections = document.querySelectorAll(".swipe-menu__section-container");
@@ -138,7 +138,7 @@ if (swipeMenu) {
     }
   }, false)
 
-  overlaySwipeMenu.addEventListener("click", () => {
+  overlaySwipeMenu && overlaySwipeMenu.addEventListener("click", () => {
     closeMenu();
 
     mobileMenuButtons.forEach((item) => {

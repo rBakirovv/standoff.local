@@ -947,6 +947,7 @@ blockquote.wp-block-quote {
   margin-right: auto;
   padding-right: 48px;
   max-width: none;
+  width: 100%;
 }
 
 .news-cards__button {

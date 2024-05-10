@@ -1,5 +1,9 @@
 /* UI */
 
+.dis-none {
+  display: none !important;
+}
+
 .logo {
   font-family: "Days One", sans-serif;
   font-weight: 400;
@@ -679,6 +683,11 @@ p {
   color: var(--colors-black);
 }
 
+p.small {
+  font-size: 16px;
+  line-height: 140%;
+}
+
 p a {
   text-decoration: underline;
   text-decoration-skip-ink: none;
@@ -730,4 +739,18 @@ li a {
   .list-two-columns {
     column-count: 1;
   }
+}
+
+/* colors */
+
+p.purple {
+  color: var(--colors-purple);
+}
+
+p.red {
+  color: var(--colors-red);
+}
+
+p.green {
+  color: var(--colors-green);
 }

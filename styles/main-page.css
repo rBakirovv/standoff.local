@@ -418,7 +418,7 @@
   overflow: hidden;
 }
 
-.news-card:has(.news-card__button) .news-card__text-container::after {
+.news-card:not(:has(.news-card__button.dis-none)) .news-card__text-container::after {
   content: '';
   position: absolute;
   left: 0;

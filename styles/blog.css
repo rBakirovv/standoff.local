@@ -12,7 +12,7 @@
 }
 
 .blog__content-container {
-  max-width: 740px;
+  max-width: 800px;
   width: 100%;
 }
 
@@ -80,6 +80,12 @@
   opacity: 1;
 }
 
+.blog .wp-block-gallery.has-nested-images figure.wp-block-image figcaption {
+  background: linear-gradient(0deg, #000000, #00000080 70%, #0000);
+  max-height: 100%;
+  padding-top: 8px;
+}
+
 .blog .buttons-container a {
   width: 100%;
 }
@@ -129,7 +135,7 @@
 .sidebar {
   min-width: 260px;
   line-height: 1;
-  margin-left: 120px;
+  margin-left: 60px;
 }
 
 .sidebar__inner {
@@ -712,42 +718,65 @@ blockquote.wp-block-quote {
 }
 
 .privates-gallery__sliders-container {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.privates-gallery .privates-gallery__sliders-container {
   min-width: 550px;
   max-width: 550px;
-  overflow: hidden;
 }
 
 .privates-gallery__slider-container {
   position: relative;
   width: 100%;
-  max-width: 550px;
   height: 317px;
   border-radius: 12px;
   overflow: hidden;
 }
 
+.privates-gallery .privates-gallery__slider-container {
+  max-width: 550px;
+}
+
 .privates-gallery__slide img {
+  width: 100%;
+  height: initial;
+}
+
+.privates-gallery .privates-gallery__slide img {
+  width: initial;
   height: 100%;
 }
 
 .privates-gallery__image-container {
   width: 100%;
-  max-width: 550px;
-  min-width: 550px;
   height: max-content;
   border-radius: 12px;
   overflow: hidden;
+}
+
+.privates-gallery .privates-gallery__image-container {
+  max-width: 550px;
+  min-width: 550px;
 }
 
 .privates-gallery__image-container img {
   width: 100%;
 }
 
+.privates-gallery .privates-gallery__image-container img {
+  width: 100%;
+}
+
 .privates-gallery__thumbnails-container {
   width: 100%;
-  max-width: 550px;
   height: 61px;
   margin-top: 8px;
+}
+
+.privates-gallery .privates-gallery__thumbnails-container {
+  max-width: 550px;
 }
 
 .privates-gallery__thumbnail {
@@ -763,6 +792,12 @@ blockquote.wp-block-quote {
 }
 
 .privates-gallery__thumbnails-container img {
+  width: 100%;
+  height: initial;
+}
+
+.privates-gallery .privates-gallery__thumbnails-container img {
+  width: initial;
   height: 100%;
 }
 
@@ -826,8 +861,30 @@ blockquote.wp-block-quote {
   flex-direction: column;
 }
 
+#glightbox-body .download-button {
+  flex-direction: column;
+}
+
 .privates-gallery__review .android-icon {
   display: inline-block;
+}
+
+.gallery-caption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-family: "Days One", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: var(--colors-white);
+  border-radius: 0 0 12px 12px;
+  opacity: 1;
+  background: linear-gradient(0deg, #000000, #00000080 70%, #0000);
+  max-height: 100%;
+  width: 100%;
+  padding: 8px;
 }
 
 @media screen and (max-width: 1120px) {
@@ -836,7 +893,7 @@ blockquote.wp-block-quote {
     align-items: center;
   }
 
-  .privates-gallery__review {
+  .privates-gallery .privates-gallery__review {
     max-width: 550px;
   }
 }
@@ -851,7 +908,17 @@ blockquote.wp-block-quote {
     max-width: 100%;
   }
 
+  .privates-gallery .privates-gallery__sliders-container {
+    min-width: 0;
+    max-width: 100%;
+  }
+
   .privates-gallery__slider-container {
+    height: 160px;
+    max-width: 100%;
+  }
+
+  .privates-gallery .privates-gallery__slider-container {
     height: 160px;
     max-width: 100%;
   }
@@ -861,7 +928,17 @@ blockquote.wp-block-quote {
     width: 100%;
   }
 
+  .privates-gallery .privates-gallery__slide img {
+    height: initial;
+    width: 100%;
+  }
+
   .privates-gallery__image-container {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .privates-gallery .privates-gallery__image-container {
     max-width: 100%;
     min-width: 0;
   }
@@ -871,17 +948,37 @@ blockquote.wp-block-quote {
     width: 100%;
   }
 
+  .privates-gallery .privates-gallery__image-container img {
+    height: initial;
+    width: 100%;
+  }
+
   .privates-gallery__thumbnails-container {
     max-width: 100%;
     height: 51px;
   }
 
+  .privates-gallery .privates-gallery__thumbnails-container {
+    max-width: 100%;
+    height: 51px;
+  }
+
   .privates-gallery__thumbnail img {
-    height: initial;
     width: 100%;
+    height: 100%;
+  }  
+
+  .privates-gallery .privates-gallery__thumbnail img {
+    width: 100%;
+    height: 100%;
   }
 
   .privates-gallery__review {
+    max-width: 100%;
+    padding: 16px;
+  }
+
+  .privates-gallery .privates-gallery__review {
     max-width: 100%;
     padding: 16px;
   }

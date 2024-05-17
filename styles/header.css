@@ -238,20 +238,49 @@
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, #000 100%);
 }
 
-.menu__dropdown-item span {
-  display: inline-block;
+.menu__dropdown-item .private-card__badge {
+  z-index: 2;
+  left: 8px;
+  bottom: 8px;
+  font-size: 10px;
+  padding: 4px 8px;
+}
+
+.menu__dropdown-text-container {
   position: absolute;
   z-index: 2;
   left: 50%;
   bottom: 50%;
   transform: translateX(-50%) translateY(50%);
+  max-width: 95%;
+  text-align: center;
+}
+
+.menu__dropdown-text-container>*:first-child {
+  margin-top: 0;
+}
+
+.menu__dropdown-text-container>*:last-child {
+  margin-bottom: 0;
+}
+
+.menu__dropdown-headline {
+  display: inline-block;
   font-family: "Days One", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 133%;
-  text-align: center;
   color: var(--colors-white);
-  max-width: 95%;
+}
+
+.menu__dropdown-text {
+  display: inline-block;
+  font-family: "Days One", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 130%;
+  color: var(--colors-white);
+  margin-top: 4px;
 }
 
 a.menu__dropdown-item {

@@ -8,6 +8,27 @@
   height: min-content !important;
 }
 
+/* Работает в Firefox */
+.gslide-inline {
+  scrollbar-width: thin;
+  scrollbar-color: #b3b3b3 transparent;
+}
+
+/* Работает в Chrome, Edge и Safari */
+.gslide-inline::-webkit-scrollbar {
+  width: 8px;
+}
+
+.gslide-inline::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.gslide-inline::-webkit-scrollbar-thumb {
+  background-color: #b3b3b3;
+  border-radius: 10px;
+  border: 3px solid transparent;
+}
+
 .glightbox-clean .gnext {
   display: none;
 }
@@ -30,6 +51,11 @@
 
 .modal__container .download-button {
   width: 100%;
+}
+
+.modal__image {
+  width: 100%;
+  border-radius: 12px;
 }
 
 @media screen and (max-width: 1024px) {

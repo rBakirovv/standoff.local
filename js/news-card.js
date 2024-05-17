@@ -4,10 +4,12 @@ window.addEventListener("DOMContentLoaded", function () {
   const newsCards = document.querySelectorAll(".news-card");
 
   newsCardButtons.forEach(element => {
+    const elementImage = element.parentNode.parentNode.querySelector(".news-card__image");
     body.insertAdjacentHTML('beforeEnd',
       `
       <div id="${element.getAttribute('href').slice(1)}" style="display: none;">
         <div class="modal__container">
+          <img class="modal__image modal__image_news" src="${elementImage.src}" alt="${elementImage.alt}">
           ${element.parentNode.querySelector(".news-card__text-container").innerHTML}
         </div>
       </div>
